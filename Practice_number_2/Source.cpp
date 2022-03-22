@@ -165,12 +165,16 @@ List* Delete_Number(int Num, List* head)
     puts("Такого номера в списке нет!"); // Такого номера в списке нет
     return head;
 }
-List* find_insert(int n, List* head)
+List* find_insert(int num, List* head)
 {
-    int ans, cnt=0;
+    int ans = 0, cnt = 0;
     printf("Введите число, которое хотите найти: ");
     scanf("%d", ans);
-    
+    while (ans == head->value)
+    {
+        
+    }
+    return head;
 }
 void Print_list(List* head)
 {
