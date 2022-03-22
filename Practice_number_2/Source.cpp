@@ -6,7 +6,7 @@
 #include <iostream>
 
 
-List* Insert_first(int n, List* head)
+List* Insert_first(int n, List* head)//fsdf
 {
     List* q = new List(n, head);
     return q;
