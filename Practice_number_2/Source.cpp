@@ -165,18 +165,28 @@ List* Delete_Number(int Num, List* head)
     puts("Такого номера в списке нет!"); // Такого номера в списке нет
     return head;
 }
-void Find_insert(int num, List* head)
+List* Find_insert(int num, List* head, int* cnt)
 {
-    int cnt = 0;
+    *cnt = 0;
     List* p = head;
-    while (p->next != NULL)
+    List* found = NULL;
+    while (p != NULL)
     {
         if (p->value == num)
         {
-            cnt++;
+            (*cnt)++;
+            if (found == NULL)
+            {
+                found = p;
+            }
         }
-        else p = p->next;
+        p = p->next;
     }
+    return found;
+}
+List* Delete_copies(List* head)
+{
+
 }
 void Print_list(List* head)
 {
