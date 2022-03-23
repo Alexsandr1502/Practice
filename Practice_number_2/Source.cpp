@@ -165,11 +165,15 @@ List* Delete_Number(int Num, List* head)
     puts("Такого номера в списке нет!"); // Такого номера в списке нет
     return head;
 }
-List* Find_insert(int num, List* head, int* cnt)
+List* Find_insert(List* head, int* cnt)
 {
     *cnt = 0;
+    int num;
     List* p = head;
     List* found = NULL;
+    if (head == NULL) { puts("Список пуст!"); return NULL; }
+    printf("число: ");
+    scanf("%d", &num);
     while (p != NULL)
     {
         if (p->value == num)
@@ -182,11 +186,39 @@ List* Find_insert(int num, List* head, int* cnt)
         }
         p = p->next;
     }
+    printf("Число нахождений: %d\n", *cnt);
     return found;
 }
-List* Delete_copies(List* head)
+bool DelDuplicates(List* head)
 {
-
+    List* p = head;
+    List* t, * fol, * prev;
+    if (p == NULL)
+    {
+        puts("Список пуст!"); 
+        return NULL;
+    }
+    else
+    {
+        for (p; p != NULL; p = p->next) // идем по списку
+        {
+            prev = p;                            // prev - предыдущий
+            for (fol = p->next; fol != NULL; )   // fol  - следующий
+            {
+                if (fol->value == p->value)
+                {
+                    t = prev->next = fol->next;
+                    delete fol;                      //освобождаем место в памяти
+                    fol = t;
+                    continue;                       // если нашли повторяющийся элемент, то удаляем их, передаем управление в for,
+                }
+                prev = fol;
+                fol = fol->next;
+            }
+        }
+    }
+    puts("\nКопии вхождений удалены.");
+    return true;
 }
 void Print_list(List* head)
 {
