@@ -189,10 +189,11 @@ List* Find_insert(List* head, int* cnt)
     printf("„исло нахождений: %d\n", *cnt);
     return found;
 }
-bool DelDuplicates(List* head)
+bool DelDuplicates(List* head, int *count)
 {
     List* p = head;
     List* t, * fol, * prev;
+    *count = 0;
     if (p == NULL)
     {
         puts("—писок пуст!"); 
@@ -207,18 +208,19 @@ bool DelDuplicates(List* head)
             {
                 if (fol->value == p->value)
                 {
+                    (*count)++;
                     t = prev->next = fol->next;
-                    delete fol;                      //освобождаем место в пам€ти
+                    delete fol;         //освобождаем место в пам€ти
                     fol = t;
-                    continue;                       // если нашли повтор€ющийс€ элемент, то удал€ем их, передаем управление в for,
+                    continue;           // если нашли повтор€ющийс€ элемент, то удал€ем их, передаем управление в for,
                 }
                 prev = fol;
                 fol = fol->next;
             }
         }
     }
-    puts("\n опии вхождений удалены.");
-    return true;
+    printf("\n”далено копий: %d", *count);
+    return false;
 }
 void Print_list(List* head)
 {

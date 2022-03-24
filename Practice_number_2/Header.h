@@ -22,7 +22,7 @@ List* Delete_last(int& n, List* head); // Удаление элемента из конца списка
 List* Delete_value(int n, List* head); // Удаление элемента из списка по значению
 List* Delete_Number(int Num, List* head); // Удаление элемента из списка по номеру
 List* Find_insert(List* head, int *cnt); //Определение количества вхождений числа в список
-bool DelDuplicates(List* head);
+bool DelDuplicates(List* head, int *count);
 void Print_list(List* head); // Печать содержимого списка
 
 

@@ -33,7 +33,7 @@ void Menu()
         case 7: printf("число: "); scanf("%d", &num); head = Delete_value(num, head); break;
         case 8: printf("номер: "); scanf("%d", &num); head = Delete_Number(num, head); break;
         case 9: int cnt;  Find_insert(head, &cnt); break;
-        case 10: DelDuplicates(head); break;
+        case 10:  int count;  DelDuplicates(head, &count); break;
         case 11: exit(1);
         }
     }
