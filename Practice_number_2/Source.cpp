@@ -219,6 +219,7 @@ bool DelDuplicates(List* head, int *count)
             }
         }
     }
+    Print_list(head);
     printf("\nУдалено копий: %d", *count);
     return false;
 }
